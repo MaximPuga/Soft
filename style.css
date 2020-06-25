@@ -1,0 +1,255 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  margin:0 auto;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+}
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0px 10px;
+}
+.header{
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.header:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f9ffff;
+    z-index: 2;
+}
+.header__list{
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+.header__list li {
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+}
+.header__link{
+    font-family: "Roboto";
+    color: #121212;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0px 0px 0px 80px;
+}
+.header__body{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.header__logo{
+    font-family: "Exo 2";
+    color: #121212;
+    text-decoration: none;
+    flex: 0 0 60px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 3;
+    font-size: 35px;
+}
+.header__burger{
+    display: none;
+}
+@media (max-width: 767px){
+    body.lock{
+        overflow: hidden;
+    }
+    .header__body{
+        height: 50px;
+    }
+    .header__logo{
+        flex: 0 0 40px;
+    }
+    .header__burger{
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        position: relative;
+        z-index: 3;
+    }
+    .header__burger span{
+        position: absolute;
+        background-color: #121212;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+    }
+    .header__burger:before,
+    .header__burger:after{
+        content: '';
+        background-color: #121212;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+    }
+    .header__burger:before{
+        top: 0;
+    }
+    .header__burger:after{
+        bottom: 0;
+    }
+    .header__burger.active span{
+        transform: scale(0);
+    }
+    .header__burger.active:before{
+        transform:rotate(45deg);
+        top: 9px;
+    }
+    .header__burger.active:after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .header__menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color:#f9ffff;
+        padding: 70px 10px 20px 10px;
+    }
+    .header__menu.active{
+        top: 0;
+    }
+    .header__list{
+        display: block;
+    }
+    .header__list li{
+        margin: 0px 0px 20px 0px;
+    }
+}
+.Content{
+    padding: 192px 0px 0px 0px ;
+    width: 100%;
+    background-color: #ffffff;
+}
+.Content_text{
+margin-left: 180px;
+color: #121212;
+font-family: "Exo 2";
+font-weight: normal;
+font-size: 40px;
+}
+.Content_text_down{
+    margin-top: 40px;
+    margin-left: 180px;
+    color: #121212;
+    font-family: "Exo 2";
+    font-size: 20px;
+}
+.Content_btn{
+    margin-top: 50px;
+    margin-left: 180px;
+    font-family: "Roboto";
+    font-size: 14px;
+    text-align: center;
+    background: rgba(196, 196, 196, 0.12);
+}
+.Content_btn {
+    display: inline-block;
+    color: #121212; 
+    text-decoration: none;
+    padding: .9em 2.5em;
+    outline: none;
+    border-width: 2px 0;
+    border-style: solid none;
+    border-color: #F6C619 #000 #F6C619;
+    border-radius: 25px;
+    background: linear-gradient(#F6C619, #F6C619) #F6C619;
+    transition: 0.2s;
+  } 
+  .Content_btn:hover { background: linear-gradient(#f5ae00, #ffff00) #F6C619; }
+  .Content_btn:active { background: linear-gradient(#f59500, #f5ae00) #F6C619; }
+.content__text p{
+    margin: 0px 0px 20px;
+}
+.Content_icons{
+    margin-top: 200px;
+    margin-left: 180px;
+}
+.facebook{
+    margin-left: 50px;
+}
+.viber{
+    margin-left: 50px;
+}
+.Content_photo{
+    width: 432px;
+    height: 585px;
+    margin-left: 910px;
+    margin-top: -1000px;
+}
+@media(max-width:767px){
+    .content{
+        padding: 70px 0px 0px 0px;
+    }
+    .Content_photo{
+        width: 216px;
+        height: 292px;
+        margin-left: 180px;
+        margin-top: 100px;
+    }
+}
